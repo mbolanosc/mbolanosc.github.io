@@ -18,7 +18,10 @@ function init() {
       clouds.push(document.getElementById("cloud_1"));
       clouds.push(document.getElementById("cloud_2"));
       clouds.push(document.getElementById("cloud_3"));
-      //console.log('sdasd', clouds);
+      clouds.push(document.getElementById("cloud_4"));
+      clouds.push(document.getElementById("cloud_5"));
+      clouds.push(document.getElementById("cloud_6"));
+      clouds.push(document.getElementById("cloud_7"));
       var count_Clouds = 0;
       for (var i = 0; i < clouds.length; i++) {
         count_Clouds++;
@@ -27,6 +30,7 @@ function init() {
       }
       console.log('CONTADOR DE NUBES', count_Clouds);
     }
+    
 		//Animation of popcorn.
 		//hacer una despues de otra.
 
