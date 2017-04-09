@@ -10,15 +10,28 @@ function init() {
     scene1.addTo(controller_Scroller);
 
 		//Second scene. CLOUDS
-
-		var clouds =  document.getElementsByClassName("cloud");
-
+    var timeline_1 = new TimelineMax({delay:10});
+    function clouds() {
+      //cada id meterlo en un array y con un for
+      //recorrer cada uno de los obj, y incrementarle el tween 3 #.
+      var clouds = [];
+      clouds.push(document.getElementById("cloud_1"));
+      clouds.push(document.getElementById("cloud_2"));
+      clouds.push(document.getElementById("cloud_3"));
+      //console.log('sdasd', clouds);
+      var count_Clouds = 0;
+      for (var i = 0; i < clouds.length; i++) {
+        count_Clouds++;
+        //console.log(clouds[i]);
+        var cloudTween = TweenLite.from(clouds[i],count_Clouds,{ease:Back.easeOut.config(1.5), y: "100%"});
+      }
+      console.log('CONTADOR DE NUBES', count_Clouds);
+    }
 		//Animation of popcorn.
 		//hacer una despues de otra.
-		var cloudTween = TweenLite.from(clouds, 2.5, {tease: Bounce.easeOut, y: "100%"});
 
     var scene2 = new ScrollMagic.Scene({ triggerElement: trigger2 });
-    scene2.setTween(cloudTween); // Start the clouds animation.
+    scene2.setTween(clouds); // Start the clouds animation.
     scene2.addTo(controller_Scroller);
 
 		//smoke.
