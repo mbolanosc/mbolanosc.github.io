@@ -1,8 +1,8 @@
 //http://scrollmagic.io/docs/index.html
 window.addEventListener('load', init, false);
 function init() {
-    var timing_1 = new TimelineMax();
-    var controller_Scroller= new ScrollMagic.Controller();
+`    var timing_1 = new TimelineMax();
+`    var controller_Scroller= new ScrollMagic.Controller();
     var trigger1 = document.getElementById("trigger1");
     var animate1 = document.getElementById("animate1");
 
@@ -35,12 +35,12 @@ function init() {
     }
 
     //sun.
-	   function sun_moving(){
+	  function sun_moving(){
      //var sun =
      document.getElementsByClassName("st46");
      //console.log(sun);
      TweenMax.to("st46", 2.5, {scaleX:1, scaleY:0.8, opacity:0.7});
-     }
+    }
 
     //smoke.
     //clementine eyes.
