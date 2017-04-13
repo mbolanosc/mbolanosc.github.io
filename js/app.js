@@ -1,14 +1,8 @@
 //http://scrollmagic.io/docs/index.html
 window.addEventListener('load', init, false);
 function init() {
-  var timing_1 = new TimelineMax();
+  var clouds_timeline = new TimelineMax();
   var controller_Scroller = new ScrollMagic.Controller();
-  var trigger1 = document.getElementById("trigger1");
-  var animate1 = document.getElementById("animate1");
-
-  //first scene.
-  var scene1 = new ScrollMagic.Scene({ triggerElement: trigger1 });
-  scene1.addTo(controller_Scroller);
 
   //Second scene. CLOUDS
   function clouds() {
@@ -24,50 +18,45 @@ function init() {
 
     for (var i = 0; i < clouds.length; i++) {
       count_Clouds++;
-      var cloudTween = TweenLite.from(clouds[i], count_Clouds, { ease: Back.easeOut.config(1.5), y: "100%" });
+      var cloudTween = TweenLite.from(clouds[i], count_Clouds, { ease: Back.easeOut.config(1.5), y: "100%"});
+      clouds_timeline.add(cloudTween);
     }
-    console.log('CONTADOR DE NUBES', count_Clouds);
-    /*var cloudKeepMoving = new TimelineMax({repeat:-1});
-    function floating_Clouds(){
-      var cloudTween = TweenLite.from(clouds,count_Clouds,{ease:Back.easeOut.config(1.5), y: "100%"});
-    }*/
-    //cloudKeepMoving.add(floating_Clouds);
   }
 
   //sun.
   function sun_moving() {
-    //var sun =
-    document.getElementsByClassName("st46");
-    //console.log(sun);
-    TweenMax.to("st46", 2.5, { scaleX: 1, scaleY: 0.8, opacity: 0.7 });
+    console.log('HOLA');
+    //var sun = document.getElementsByClassName("st46");
+    //TweenMax.to("st46", 2.5, { scaleX: 1, scaleY: 0.8, opacity: 0.7 });
+
   }
 
   //smoke.
   //clementine eyes.
-  var scene2 = new ScrollMagic.Scene({ triggerElement: trigger2 });
-  scene2.setTween(clouds); // Start the clouds animation.
-  timing_1.add(sun_moving);
+
+
+
+  var scene1 = new ScrollMagic.Scene({ triggerElement: trigger2 });
+  scene1.setTween(clouds_timeline); // Start the clouds animation.
+  scene1.addIndicators({ name: "2 (duration: 300 px)" });
+
+
   //scene2.setTween(sun_moving); // Start the sun animation.
-  scene2.addTo(controller_Scroller);
+  //timing_1.add(sun_moving);
 
-  scene2.on('update', function (event) {
-    console.log("Hit enter point of scene 1.");
+  scene1.addTo(controller_Scroller);
+
+  scene1.on('update', function (event) {
+    //console.log("Changes the position");
   });
 
-  scene2.on('leave', function (event) {
-    console.log("Hit end point of scene 1.");
+  scene1.on('leave', function (event) {
+    console.log("Leave the target");
+
   });
 
-  scene2.on("progress", function (event) {
-    console.log("Scene progress changed to " + event.progress);
+  scene1.on("progress", function (event) {
+//    console.log("?? " + event.progress);
+
   });
 }
-
-
-//notes
-//  //scene1.setTween(animate1Tween); // hace que aparezca el animate1Tween.
-  //scene1.addIndicators({ name: "1 (duration: 1 second)" }); // add indicators (requires plugin)
-  //    //let animate1Tween = TweenLite.to(animate1, 1, { color: "white" });
-  //      //var trigger2 = document.getElementById("trigger2");
-    //var animate2 = document.getElementById("animate2");
-    //    //scene2.addIndicators({ name: "2 (duration: 300 px)" });
