@@ -1,0 +1,22 @@
+{
+  "name": "clementine-story-book",
+  "version": "1.0.0",
+  "description": "gsap animation kids book",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mbolanosc/Clementine-StoryBook.git"
+  },
+  "author": "mbolanosc",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mbolanosc/Clementine-StoryBook/issues"
+  },
+  "homepage": "https://github.com/mbolanosc/Clementine-StoryBook#readme",
+  "dependencies": {
+    "browser-sync": "^2.18.8"
+  }
+}

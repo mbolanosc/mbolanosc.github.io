@@ -1,49 +1,70 @@
 html, body {
-	margin: 0px;
-	padding: 0px;
+  margin: 0px;
+  padding: 0px;
 }
 
 h1 {
-	margin: 0px;
-	padding: 0px;
-	font-size: 60px;
-	font-family: Arial, Helvetica, sans-serif;
+  margin: 0px;
+  padding: 0px;
+  font-size: 60px;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 .spacer {
-	text-align: center;
-	min-height: 100px;
-	border-bottom-style: dotted;
-    border-bottom-color: black;
-	border-bottom-width: 1px;
+  text-align: center;
+  min-height: 100px;
+  border-bottom-style: dotted;
+  border-bottom-color: black;
+  border-bottom-width: 1px;
 }
+
 .spacer.s0 {
-	min-height: 1px;
+  min-height: 1px;
 }
+
 .spacer.s2 {
-	min-height: 200px;
+  min-height: 200px;
 }
+
 .spacer.s3 {
-	min-height: 300px;
+  min-height: 300px;
 }
+
 .spacer.s4 {
-	min-height: 600px;
+  min-height: 600px;
 }
+
 .spacer.s5 {
-	min-height: 500px;
+  min-height: 500px;
 }
+
 .spacer.s6 {
-	min-height: 600px;
+  min-height: 600px;
 }
+
 .spacer.s7 {
-	min-height: 700px;
+  min-height: 700px;
 }
+
 .spacer.s8 {
-	min-height: 800px;
+  min-height: 800px;
 }
+
 .spacer.s9 {
-	min-height: 900px;
+  min-height: 900px;
 }
+
 .spacer.s10 {
-	min-height: 1000px;
+  min-height: 1000px;
+}
+
+
+/*Clementine*/
+
+#clementine-first {
+	display: block;
+  position: absolute;
+
+  margin-left: 600px;
+  margin-top: 450px;
 }
