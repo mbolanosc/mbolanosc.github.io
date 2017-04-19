@@ -62,7 +62,7 @@ h1 {
 /*Clementine*/
 
 #clementine-first {
-	display: block;
+	display:  none;
   position: absolute;
 
   margin-left: 600px;
