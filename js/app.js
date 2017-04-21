@@ -105,11 +105,19 @@ function init() {
     function blinkingEyes() {
       console.log('blinkingEyes()');
 
-      var eye1_timeline = new TimelineMax({repeat: -1, yoyo: true});
-      var eye2_timeline = new TimelineMax({repeat: -1, yoyo: true});
+      var eye1_timeline = new TimelineMax({onComplete: notBlinkingTree,repeat: -1, yoyo: true});
+      var eye2_timeline = new TimelineMax({onComplete: notBlinkingTree,repeat: -1, yoyo: true});
 
       eye1_timeline.to('#eye_1', 2, {fill: "#0000"});
       eye2_timeline.to('#eye_2', 2, {fill: "#0000"});
+    }
+    //sigue mala es para dejar de parpadear.
+    function notBlinkingTree(){
+      console.log('not blinking');
+      var not_blinking_tm = new TimelineMax();
+      not_blinking_tm.to('#eye_1', 2, {fill: "#0000"});
+      not_blinking_tm.to('#eye_2', 2, {fill: "#0000"});
+
     }
 
     function clementine_first_look() {
@@ -122,7 +130,7 @@ function init() {
         opacity: 3,
         ease: Power1.easeInOut,
         display: 'block',
-        delay: 5
+        delay: 8
       })
 
     }
@@ -131,15 +139,25 @@ function init() {
       //eyes PARPADEO MEJORAR.
       var clementine_eyes_timeline = new TimelineMax({repeat: -1, yoyo: true});
       clementine_eyes_timeline.to('.clementine-eyes', 2, {fill: "#FFFFFF"});
-      //callback
+      //mover a clementine hasta el agua
+      console.log('move clementine');
+
+      var clementine_to_water = new TimelineMax();
+      clementine_to_water.to('#clementine-first', 0,{x:"-=150%",y:"=100%",delay:12});
+      //patitas
 
     }
+    function water(){
+      console.log('water');
+      TweenLite.to(".st58", 1.5, {width:100, height:200});
 
+    }
     general_tm.add(clouds_Floating);
     general_tm.add(smoke);
     general_tm.add(blinkingEyes);
     general_tm.add(clementine_first_look);
     general_tm.add(clementine_moves);
+    general_tm.add(water);
 
   }
 
