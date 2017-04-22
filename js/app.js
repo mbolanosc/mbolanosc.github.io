@@ -104,7 +104,7 @@ function init() {
 
     function blinkingEyes() {
       console.log('blinkingEyes()');
-
+      //cambiarlo por tween y agregarle un tween al timeline
       var eye1_timeline = new TimelineMax({onComplete: notBlinkingTree,repeat: -1, yoyo: true});
       var eye2_timeline = new TimelineMax({onComplete: notBlinkingTree,repeat: -1, yoyo: true});
 
@@ -121,6 +121,7 @@ function init() {
     }
 
     function clementine_first_look() {
+      //con un sscope.
       console.log('clementine 1');
       var clementine_first_appear = new TimelineMax();
 
@@ -143,9 +144,10 @@ function init() {
       console.log('move clementine');
 
       var clementine_to_water = new TimelineMax();
-      clementine_to_water.to('#clementine-first', 0,{x:"-=150%",y:"=100%",delay:12});
+      clementine_to_water.to('#clementine-first', 1,{x:"-=150%",y:"=100%",delay:12});
       //patitas
 
+      //path: tweens para un path a seguir agregar el callback
     }
     function water(){
       console.log('water');
