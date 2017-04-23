@@ -67,7 +67,20 @@ h1 {
 #clementine-first {
 	display:  none;
   position: absolute;
-
   margin-left: 600px;
+  margin-top: 450px;
+}
+
+#clementine-stand_up{
+  display:  none;
+  position: absolute;
+  margin-left: 400px;
+  margin-top: 470px;
+}
+
+#clementine-scare{
+  display:  none;
+  position: absolute;
+  margin-left: 390px;
   margin-top: 450px;
 }
