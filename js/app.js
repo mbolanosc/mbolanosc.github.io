@@ -108,24 +108,15 @@ function init() {
     }
 
     function blinkingEyes() {
-      //cambiarlo por tween y agregarle un tween al timeline
-      var eye1_timeline = new TimelineMax({onComplete: notBlinkingTree, repeat: -1, yoyo: true});
-      var eye2_timeline = new TimelineMax({onComplete: notBlinkingTree, repeat: -1, yoyo: true});
+      var eye1_timeline = new TimelineMax({repeat: 3, yoyo: true});
+      var eye2_timeline = new TimelineMax({repeat: 3, yoyo: true});
 
-      eye1_timeline.to('#eye_1', 2, {fill: "#0000"});
-      eye2_timeline.to('#eye_2', 2, {fill: "#0000"});
+      eye1_timeline.to('#eye_1', 2, {display:"block",fill: "#0000"});
+      eye2_timeline.to('#eye_2', 2, {display:"block",fill: "#0000"});
     }
-    //sigue mala es para dejar de parpadear.
-    function notBlinkingTree() {
-      console.log('not blinking');
-      var not_blinking_tm = new TimelineMax();
-      not_blinking_tm.to('#eye_1', 2, {fill: "#0000"});
-      not_blinking_tm.to('#eye_2', 2, {fill: "#0000"});
 
-    }
 
     function clementine_first_look() {
-      //con un sscope.
       console.log('clementine 1');
       var clementine_first_appear = new TimelineMax();
 
@@ -136,6 +127,9 @@ function init() {
         ease: Power1.easeInOut,
         display: 'block',
         delay: 8
+      });
+      notBlinkEye1 = TweenMax.to('#eye_1', 0, {
+        display: 'none',
       });
 
     }
@@ -376,25 +370,3 @@ function init() {
   //scene1.addIndicators({name: "2 (duration: 300 px)"});
   scene1.addTo(controller_Scroller);
 }
-
-/*orden
-1. nubes YA
-2. que floten las nubes.
-3. sol YA
-4. el viento de la cubeta de agua.
-5. el humo de la casita. YA
-6. los ojos parpadeando dentro del arbol. YA
-7. clementine sale del arbol.YA
-8. clementine camina hacia la cubeta de agua. YA
-9. clementine se moja con el agua.YA
-10. clementine camina hacia las manzanas. NO
-11. clementine se va a dormir. NO
-*/
-
-//FALTAS:
-//4. el viento de la cubeta de agua.
-//10. clementine camina hacia las manzanas. NO
-//11. clementine se va a dormir. NO
-//12 hacer caminito de piedra.
-//13.que se haga de noche -> fondo oscuro y sol se hace luna y las nubes tienen transparencia
-//animar la portada

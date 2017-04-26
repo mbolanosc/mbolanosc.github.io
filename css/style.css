@@ -62,14 +62,16 @@ h1 {
 }
 #title-second > tspan{
   font-family: 'Open Sans Condensed', sans-serif;
-
 }
 
 
 /*background*/
 
 /*Clementine*/
-
+#eye_1,
+#eye_2{
+  display: none;
+}
 #clementine-first {
 	display:  none;
   position: absolute;
