@@ -1,4 +1,7 @@
-window.addEventListener('load', init, false);
+var Started = false;
+if (!Started) {
+  window.addEventListener('load', init, false);
+}
 function init() {
   console.log('hola');
   var tl = new TimelineMax();

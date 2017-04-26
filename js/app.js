@@ -1,5 +1,8 @@
 //http://scrollmagic.io/docs/index.html
-window.addEventListener('load', init, false);
+var Started = false;
+if (!Started) {
+  window.addEventListener('load', init, false);
+}
 function init() {
   var tl = new TimelineMax({repeat: -1});
   let clouds_timeline = new TimelineMax();
@@ -106,6 +109,7 @@ function init() {
       }
 
     }
+    
 
     function blinkingEyes() {
       var eye1_timeline = new TimelineMax({repeat: 3, yoyo: true});
@@ -156,7 +160,7 @@ function init() {
       clementinePathTreeTm.add(TweenLite.to(document.getElementById("clementine-first"), 2, {
         onComplete: clementineStandUp,
         x: "-=90%",
-        y: "=95%",
+        y: "-=50%",
         delay: 14
       }));
     }
@@ -182,11 +186,13 @@ function init() {
       var WaterMovesDown = new TimelineMax();
 
       console.log('water');
-      TweenLite.to(".st58", 1.5, {scaleY: 2.5});
+      //linea
+      TweenLite.to("#main-cuerda", 1.5, {scaleY: 2.2});
       //TweenLite.to("#balde", 1.5, {scaleY:2.5});
       WaterMovesDown.add(TweenLite.to(document.getElementById("balde"), 1.5, {
         onComplete: clementineScare,
-        scaleY: 2.5
+        y:"+=150%"
+        //scaleY: 2.5
       }));
 
       function clementineScare(){
@@ -258,19 +264,10 @@ function init() {
 
         clementinePathToApple.add(TweenLite.to(document.getElementById("clementine-first"), 2, {
           onComplete: eatingApple,
-          x: "+=105%",
-          y: "-=55%",
-          delay: 3
+          x: "+=90%",
+          y: "-=52%",
+          delay: 2
         }));
-
-        /*sunset_first_color = TweenMax.to('#offset-1', 2, {
-          "stop-color":"yellow",
-           ease: Power1.easeOut
-        });
-        sunset_first_color = TweenMax.to('#offset-1', 2, {
-          "stop-color":"yellow",
-           ease: Power1.easeOut
-        });*/
     }
 
     function eatingApple(){
@@ -299,20 +296,21 @@ function init() {
       var clementineGoesToSleepTm = new TimelineMax();
       clementineGoesToSleepTm.add(TweenLite.to(document.getElementById("clementine-first"), 1, {
         onComplete: clementineDesappear,
-        x: "-=70%",
-        y: "-=40%",
+        x: "-=75%",
+        y: "-=45%",
         delay: 2
       }));
       function clementineDesappear(){
         console.log('insider function');
+        var dessapear = false
         clementineDesappearTm = TweenMax.to('#clementine-first', 1, {
           display:'none',
           delay: 3
         });
-        clementineDesappearTm = TweenMax.to('#clementine-first', 1, {
-          display:'none',
-          delay: 3
-        });
+        dessapear = true;
+        if (dessapear) {
+          blinkingEyes();
+        }
 
         clementineGoesToSleepTm.add(TweenLite.to(document.getElementById("offset-1"), 2, {
           "stop-color":"#6F2480",
