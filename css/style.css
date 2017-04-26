@@ -1,6 +1,7 @@
 html, body {
   margin: 0px;
   padding: 0px;
+  background-color: #20344A !important;
 }
 
 h1 {
@@ -18,9 +19,7 @@ h1 {
   border-bottom-width: 1px;
 }
 
-.spacer.s0 {
-  min-height: 1px;
-}
+
 
 .spacer.s2 {
   min-height: 200px;
@@ -57,7 +56,14 @@ h1 {
 .spacer.s10 {
   min-height: 1000px;
 }
+#title-clementine{
+  font-family: 'Open Sans Condensed', sans-serif;
 
+}
+#title-second > tspan{
+  font-family: 'Open Sans Condensed', sans-serif;
+
+}
 
 
 /*background*/

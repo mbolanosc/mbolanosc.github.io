@@ -169,8 +169,6 @@ function init() {
 
     function clementineStandUp() {
       var clementineStandsUpTm = new TimelineMax();
-
-      console.log('clementineStandUp');
       //esconder el anterior y aparecer el de pie.
       var clementineNotDisplay = TweenMax.to('#clementine-first', 1, {
         display: 'none',
@@ -178,7 +176,7 @@ function init() {
         delay: 1
       });
 
-    clementineStandsUpTm.add(TweenLite.to(document.getElementById("clementine-stand_up"), 1, {
+      clementineStandsUpTm.add(TweenLite.to(document.getElementById("clementine-stand_up"), 1, {
         onComplete: water,
         display: 'block',
         ease: Power1.easeInOut,
@@ -200,17 +198,167 @@ function init() {
       function clementineScare(){
         var clementineScareShows = new TimelineMax();
 
-        var clementineNotDisplay = TweenMax.to('#clementine-stand_up', 1, {
+        var clementineNotDisplay = TweenMax.to('#clementine-stand_up', 0, {
           display: 'none',
           ease: Power1.easeInOut,
-          delay: 1
+          delay: 0.5
         });
         clementineScareShows.add(TweenLite.to(document.getElementById("clementine-scare"), 1, {
-          //  onComplete: water,
+            onComplete: clementineMovesToApple,
             display: 'block',
             ease: Power1.easeInOut,
-            delay: 2
+            delay: 0.5
           }));
+      }
+    }
+
+    function clementineMovesToApple(){
+      //hacer que el agua vuelva a la normalidad.!!!
+      var clementinePathToApple = new TimelineMax();
+      var sunsetTm = new TimelineMax();
+
+
+      var clementineNotDisplayScare = TweenMax.to('#clementine-scare', 0, {
+          display: 'none',
+          ease: Power1.easeInOut,
+          delay: 0.5
+        });
+
+        var clementineDisplayAgain = TweenMax.to('#clementine-first', 1, {
+          display: 'block',
+          ease: Power1.easeInOut,
+          delay: 0.5,
+        });
+        //path to apple
+        move_1 = TweenMax.to('#clementine-first', 2, {
+          x: "+=70%",
+          y: "+=100%",
+          delay: 2
+        });
+        move_2 = TweenMax.to('#clementine-first', 2, {
+          x: "+=100%",
+          //y: "+=100%",
+          delay: 3
+        });
+        //sunset
+        clementinePathToApple.add(TweenLite.to(document.getElementById("offset-1"), 2, {
+          "stop-color":"yellow",
+           ease: Power3.easeOut
+        }));
+        clementinePathToApple.add(TweenLite.to(document.getElementById("offset-2"), 2, {
+          "stop-color":"#F1654C",
+           ease: Power3.easeOut
+        }));
+        clementinePathToApple.add(TweenLite.to(document.getElementById("offset-3"), 2, {
+          "stop-color":"#E01931",
+           ease: Power3.easeOut
+        }));
+        //sun goes down.
+        clementinePathToApple.add(TweenLite.to(document.getElementById("sun"), 2, {
+          x:"+=200%",
+          y:"+=300%",
+          ease: Power0.easeOut,
+          opacity:0,
+          display:"none"
+        }));
+
+        clementinePathToApple.add(TweenLite.to(document.getElementById("clementine-first"), 2, {
+          onComplete: eatingApple,
+          x: "+=105%",
+          y: "-=55%",
+          delay: 3
+        }));
+
+        /*sunset_first_color = TweenMax.to('#offset-1', 2, {
+          "stop-color":"yellow",
+           ease: Power1.easeOut
+        });
+        sunset_first_color = TweenMax.to('#offset-1', 2, {
+          "stop-color":"yellow",
+           ease: Power1.easeOut
+        });*/
+    }
+
+    function eatingApple(){
+      var clementineEatsApple = new TimelineMax();
+
+      console.log('hola');
+      apple1 = TweenMax.to('#m-1', 2, {
+        display:'none',
+        delay: 2
+      });
+      apple2 = TweenMax.to('#m-2', 2, {
+        display:'none',
+        delay: 3
+      });
+
+      clementineEatsApple.add(TweenLite.to(document.getElementById("m-3"), 2, {
+        onComplete: clementineGoesToSleep,
+        display:'none',
+        delay: 4
+      }));
+
+    }
+
+    function clementineGoesToSleep(){
+      console.log('clementineGoesToSleep');
+      var clementineGoesToSleepTm = new TimelineMax();
+      clementineGoesToSleepTm.add(TweenLite.to(document.getElementById("clementine-first"), 1, {
+        onComplete: clementineDesappear,
+        x: "-=70%",
+        y: "-=40%",
+        delay: 2
+      }));
+      function clementineDesappear(){
+        console.log('insider function');
+        clementineDesappearTm = TweenMax.to('#clementine-first', 1, {
+          display:'none',
+          delay: 3
+        });
+        clementineDesappearTm = TweenMax.to('#clementine-first', 1, {
+          display:'none',
+          delay: 3
+        });
+
+        clementineGoesToSleepTm.add(TweenLite.to(document.getElementById("offset-1"), 2, {
+          "stop-color":"#6F2480",
+           ease: Power3.easeOut
+        }));
+        clementineGoesToSleepTm.add(TweenLite.to(document.getElementById("offset-2"), 2, {
+          "stop-color":"#6F2480",
+           ease: Power3.easeOut
+        }));
+        clementineGoesToSleepTm.add(TweenLite.to(document.getElementById("offset-3"), 2, {
+          "stop-color":"#02135C",
+           ease: Power3.easeOut
+        }));
+        clementineGoesToSleepTm.add(TweenLite.to(document.getElementById("offset-4"), 2, {
+          "stop-color":"#422E39",
+           ease: Power3.easeOut
+        }));
+        clementineGoesToSleepTm.add(TweenLite.to(document.getElementById("offset-5"), 2, {
+          "stop-color":"#004D63",
+           ease: Power3.easeOut
+        }));
+        //moon goes up
+        clementineGoesToSleepTm.add(TweenLite.to(document.getElementById("sun"), 2, {
+          x:"+=350%",
+          y:"-=300%",
+          ease: Power0.easeOut,
+          opacity:100,
+          display:"block",
+        }));
+        sunline1 = TweenMax.to('#sunline1', 2, {
+          display:"none"
+        });
+        sunline2 = TweenMax.to('#sunline2', 2, {
+          display:"none"
+        });
+        sunColor = TweenMax.to('#circleSun', 2, {
+        "fill":"white"
+
+          });
+
       }
     }
 
@@ -225,7 +373,7 @@ function init() {
   //Scroll things.
   var scene1 = new ScrollMagic.Scene({triggerElement: trigger2});
   scene1.setTween(clouds_timeline); // Start the clouds animation.
-  scene1.addIndicators({name: "2 (duration: 300 px)"});
+  //scene1.addIndicators({name: "2 (duration: 300 px)"});
   scene1.addTo(controller_Scroller);
 }
 
@@ -236,17 +384,17 @@ function init() {
 4. el viento de la cubeta de agua.
 5. el humo de la casita. YA
 6. los ojos parpadeando dentro del arbol. YA
-7. clementine sale del arbol.YA -> parpadeando  NO.
-8. clementine camina hacia la cubeta de agua. NO
-9. clementine se moja con el agua.NO
+7. clementine sale del arbol.YA
+8. clementine camina hacia la cubeta de agua. YA
+9. clementine se moja con el agua.YA
 10. clementine camina hacia las manzanas. NO
 11. clementine se va a dormir. NO
 */
 
 //FALTAS:
 //4. el viento de la cubeta de agua.
-//8. clementine camina hacia la cubeta de agua. NO
-//9. clementine se moja con el agua.NO
 //10. clementine camina hacia las manzanas. NO
 //11. clementine se va a dormir. NO
 //12 hacer caminito de piedra.
+//13.que se haga de noche -> fondo oscuro y sol se hace luna y las nubes tienen transparencia
+//animar la portada

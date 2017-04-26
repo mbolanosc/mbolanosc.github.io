@@ -5,7 +5,7 @@
 	<meta charset="utf-8">
 	<title>Clementine story</title>
 	<link href="css/style.css" rel="stylesheet">
-
+	<link href="https://fonts.googleapis.com/css?family=Indie+Flower|Open+Sans+Condensed:300" rel="stylesheet">
 	<script type="text/javascript" src="js/lib/greensock/TweenMax.min.js"></script>
 	<script type="text/javascript" src="js/lib/scrollmagic/ScrollMagic.js"></script>
 	<script type="text/javascript" src="js/lib/scrollmagic/plugins/debug.addIndicators.js"></script>
@@ -13,11 +13,13 @@
 </head>
 
 <body>
-	<section style="background-color: deeppink">
-		<div class="spacer s4"></div>
-		<div id="trigger1"></div>
-		<div id="animate1">
+	<section >
+		<div></div>
+		<div ></div>
+		<div>
 			<!-- <h1>PORTADA DEL CUENTO</h1> -->
+			<div id="clementine-title" w3-include-html="svg/bookPresentation.html"></div>
+
 		</div>
 	</section>
 	<section>
@@ -110,24 +112,24 @@
 						</g>
 						<g class="st26">
 							<defs>
-								<rect id="SVGID_5_" width="1280" height="720"/>
+								<rect id="SVGID_5_" width="100%" height="720"/>
 							</defs>
 							<clipPath id="SVGID_6_">
 								<use xlink:href="#SVGID_5_"  style="overflow:visible;"/>
 							</clipPath>
 
-								<radialGradient id="SVGID_7_" cx="-4.882812e-04" cy="720" r="1.0006" gradientTransform="matrix(1002.0398 1.0305 1.0305 -1002.0398 -101.96 721828.625)" gradientUnits="userSpaceOnUse">
-								<stop  offset="0" style="stop-color:#9FBCB2"/>
-								<stop  offset="0.1957" style="stop-color:#9FBCB2"/>
-								<stop  offset="0.3031" style="stop-color:#5BA2AC"/>
-								<stop  offset="0.7845" style="stop-color:#004D63"/>
-								<stop  offset="1" style="stop-color:#004D63"/>
+								<radialGradient class="background" id="SVGID_7_" cx="-4.882812e-04" cy="720" r="1.0006" gradientTransform="matrix(1002.0398 1.0305 1.0305 -1002.0398 -101.96 721828.625)" gradientUnits="userSpaceOnUse">
+								<stop id="offset-1" offset="0" style="stop-color:#9FBCB2"/>
+								<stop id="offset-2" offset="0.1957" style="stop-color:#9FBCB2"/>
+								<stop id="offset-3" offset="0.3031" style="stop-color:#5BA2AC"/>
+								<stop id="offset-4" offset="0.7845" style="stop-color:#004D63"/>
+								<stop id="offset-5" offset="1" style="stop-color:#004D63"/>
 							</radialGradient>
 							<polygon class="st14" points="0.001,-1.316 1280.74,0.001 1279.999,721.316 -0.741,719.999 		"/>
 						</g>
 						<g class="st26">
 							<defs>
-								<rect id="SVGID_8_" width="1280" height="720"/>
+								<rect id="SVGID_8_" width="100%" height="720"/>
 							</defs>
 							<clipPath id="SVGID_9_">
 								<use xlink:href="#SVGID_8_"  style="overflow:visible;"/>
@@ -215,7 +217,7 @@
 						</g>
 						<g class="st26">
 							<defs>
-								<rect id="SVGID_13_" width="1280" height="720"/>
+								<rect id="SVGID_13_" width="100%" height="720"/>
 							</defs>
 							<clipPath id="SVGID_14_">
 								<use xlink:href="#SVGID_13_"  style="overflow:visible;"/>
@@ -1290,7 +1292,7 @@
 						</g>
 						<g class="st26">
 							<defs>
-								<rect id="SVGID_15_" width="1280" height="720"/>
+								<rect id="SVGID_15_" width="100%" height="720"/>
 							</defs>
 							<clipPath id="SVGID_16_">
 								<use xlink:href="#SVGID_15_"  style="overflow:visible;"/>
@@ -1353,10 +1355,10 @@
 								c6.309-4.024,5.533-12.537,8.83-19.482C1300.825,280.855,1316.091,268.984,1333.198,267.087"/>
 
 							<g id="sun">
-								<path class="st41" d="M308.621,290.462c0,31.978-25.923,57.901-57.901,57.901c-31.977,0-57.901-25.923-57.901-57.901
+								<path id="circleSun" class="st41" d="M308.621,290.462c0,31.978-25.923,57.901-57.901,57.901c-31.977,0-57.901-25.923-57.901-57.901
 									s25.924-57.9,57.901-57.9C282.698,232.562,308.621,258.484,308.621,290.462"/>
-								<circle class="st51" cx="250.72" cy="290.462" r="69.245"/>
-								<circle class="st46" cx="250.72" cy="290.462" r="81.91"/>
+								<circle id="sunline1" class="st51" cx="250.72" cy="290.462" r="69.245"/>
+								<circle id="sunline2" class="st46" cx="250.72" cy="290.462" r="81.91"/>
 							</g>
 
 
@@ -1420,12 +1422,15 @@
 								s2.029-4.532,4.532-4.532C495.94,500.524,497.969,502.554,497.969,505.057"/>
 							<path class="st59" d="M491.607,501.646c0,2.828-2.293,5.12-5.121,5.12s-5.121-2.292-5.121-5.12c0-2.829,2.293-5.121,5.121-5.121
 								S491.607,498.817,491.607,501.646"/>
-							<path class="st11" d="M823.002,564.541c0.773-2.078,1.355-4.536,3.508-5.233c5.101-1.652,10.209,1.155,11.982,6.106
-								c2.898,8.093-2.805,19.445-12.346,12.228c1.281,2.767,0.983,4.546-1.548,6.245c-6.702,4.502-14.729-3.835-16.536-9.191
-								c-2.752-8.151,6.087-13.674,13.185-11.496C821.949,563.415,822.568,563.972,823.002,564.541"/>
-							<path class="st18" d="M823.002,564.541c0,0-1.896-7.886,1.443-10.279c0,0-2.505-4.517-6.193-2.685
-								C818.252,551.577,817.23,560.375,823.002,564.541"/>
-							<path class="st34" d="M834.023,556.918c0,0-9.63-1.5-11.581,7.84C822.442,564.758,832.365,566.228,834.023,556.918"/>
+								<g id="m-3">
+									<path  class="st11" d="M823.002,564.541c0.773-2.078,1.355-4.536,3.508-5.233c5.101-1.652,10.209,1.155,11.982,6.106
+										c2.898,8.093-2.805,19.445-12.346,12.228c1.281,2.767,0.983,4.546-1.548,6.245c-6.702,4.502-14.729-3.835-16.536-9.191
+										c-2.752-8.151,6.087-13.674,13.185-11.496C821.949,563.415,822.568,563.972,823.002,564.541"/>
+									<path class="st18" d="M823.002,564.541c0,0-1.896-7.886,1.443-10.279c0,0-2.505-4.517-6.193-2.685
+										C818.252,551.577,817.23,560.375,823.002,564.541"/>
+									<path class="st34" d="M834.023,556.918c0,0-9.63-1.5-11.581,7.84C822.442,564.758,832.365,566.228,834.023,556.918"/>
+								</g>
+
 							<g class="st49">
 								<g>
 									<defs>
@@ -1438,12 +1443,14 @@
 										c-0.311-1.495-2.755-2.25-5.457-1.688C812.464,566.308,810.525,567.976,810.837,569.471"/>
 								</g>
 							</g>
+							<g id="m-1" >
 							<path class="st1" d="M808.171,572.152c-0.964-1.996-1.773-4.389-3.982-4.882c-5.232-1.167-10.055,2.107-11.356,7.203
 								c-2.128,8.328,4.614,19.097,13.437,11.017c-1.017,2.875-0.554,4.617,2.126,6.072c7.096,3.854,14.306-5.198,15.604-10.7
 								c1.975-8.374-7.343-13.043-14.205-10.21C809.114,570.933,808.55,571.545,808.171,572.152"/>
 							<path class="st18" d="M808.171,572.152c0,0,1.149-8.028-2.399-10.099c0,0,2.07-4.731,5.915-3.253
 								C811.687,558.801,813.528,567.464,808.171,572.152"/>
 							<path class="st34" d="M796.484,565.596c0,0,9.447-2.396,12.265,6.72C808.749,572.315,799.008,574.708,796.484,565.596"/>
+							</g>
 							<g class="st49">
 								<g>
 									<defs>
@@ -1456,12 +1463,15 @@
 										c0.171-1.518,2.533-2.499,5.276-2.191C818.829,572.924,820.915,574.403,820.745,575.921"/>
 								</g>
 							</g>
+							<g id="m-2" >
 							<path class="st39" d="M829.49,576.649c-1.305-0.936-2.647-2.177-4.223-1.725c-3.731,1.069-5.664,4.821-4.728,8.512
 								c1.531,6.032,9.547,10.545,12.358,2.352c0.35,2.181,1.247,3.128,3.455,3.126c5.846-0.007,7.296-8.259,6.216-12.207
 								c-1.644-6.008-9.186-5.751-12.567-1.573C829.667,575.547,829.521,576.132,829.49,576.649"/>
 							<path class="st18" d="M829.49,576.649c0,0-2.05-5.503-5.022-5.59c0,0-0.322-3.726,2.634-4.117
 								C827.102,566.942,831.272,571.812,829.49,576.649"/>
 							<path class="st34" d="M819.789,576.527c0,0,5.177-4.795,10.125,0.025C829.914,576.553,824.549,581.447,819.789,576.527"/>
+							</g>
+
 							<g class="st49">
 								<g>
 									<defs>
@@ -1545,7 +1555,7 @@
 						</g>
 						<g class="st26">
 							<defs>
-								<rect id="SVGID_23_" width="1280" height="720"/>
+								<rect id="SVGID_23_" width="100%" height="720"/>
 							</defs>
 							<clipPath id="SVGID_24_">
 								<use xlink:href="#SVGID_23_"  style="overflow:visible;"/>
@@ -1575,5 +1585,6 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.1/TweenMax.min.js"></script>
 <script src='js/app.js'></script>
+<script src='js/bookTitle.js'></script>
 
 </html>
