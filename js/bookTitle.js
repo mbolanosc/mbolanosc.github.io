@@ -33,11 +33,7 @@ function init() {
   }
   //second title-
   //
-  move_2 = TweenMax.to('title-span > tspan', 2,{opacity:0}, {
-		opacity:"100%",
-  //  x: "100%",
-    display: 'block'
-  });
+
   presentationClouds.push(document.getElementsByClassName("presentation-cloud"));
 
   //countes for clouds
