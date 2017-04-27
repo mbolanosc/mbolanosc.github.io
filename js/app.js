@@ -109,7 +109,7 @@ function init() {
       }
 
     }
-    
+
 
     function blinkingEyes() {
       var eye1_timeline = new TimelineMax({repeat: 3, yoyo: true});
@@ -296,8 +296,8 @@ function init() {
       var clementineGoesToSleepTm = new TimelineMax();
       clementineGoesToSleepTm.add(TweenLite.to(document.getElementById("clementine-first"), 1, {
         onComplete: clementineDesappear,
-        x: "-=75%",
-        y: "-=45%",
+        x: "-=78%",
+        y: "-=50%",
         delay: 2
       }));
       function clementineDesappear(){

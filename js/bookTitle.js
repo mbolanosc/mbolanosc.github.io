@@ -73,6 +73,10 @@ function init() {
       elementMoveDown(presentationClouds[i]);
     }
   }
+	//hover
+
+	//TweenLite.to(green, .2, {css:{opacity:0}});
+
 
   //console.log('hola',presentationClouds);
 }
